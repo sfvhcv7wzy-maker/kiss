@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>70.000 besos para mi niñita hermosa</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --d1:#cdb184;--d2:#9a7747;--paper:#ecdcb6;--paper2:#dcc597;
+  --ink:#4a2e19;--soft:#7a5a3a;--wax:#8b2a24;--line:rgba(74,46,25,.32);
+  --n:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='f'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .35 0 0 0 0 .22 0 0 0 0 .1 0 0 0 .18 0'/></filter><rect width='140' height='140' filter='url(%23f)'/></svg>");
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--d1:#3b2a19;--d2:#170f08;--paper:#dccaa0;--paper2:#c8b080;color-scheme:dark}
+}
+:root[data-theme="dark"]{--d1:#3b2a19;--d2:#170f08;--paper:#dccaa0;--paper2:#c8b080;color-scheme:dark}
+[hidden]{display:none!important}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{
+  margin:0;height:100%;overflow-x:hidden;overflow-y:auto;display:flex;
+  background:radial-gradient(ellipse at 50% 35%,var(--d1),var(--d2)) fixed;
+  color:var(--ink);font-family:"IM Fell English",Georgia,serif;
+}
+.stage{margin:auto;width:100%;max-width:30rem;box-sizing:border-box;padding:1.2rem}
+.hand{font-family:Caveat,"Segoe Script","Bradley Hand",cursive}
+
+/* sobre */
+.wrap{position:relative;width:22em;font-size:min(16px,3.9vw);margin:0 auto}
+.peek{position:absolute;left:5%;right:5%;top:4%;height:85%;background:var(--paper);box-shadow:0 2px 8px rgba(40,20,5,.4);transition:transform 1s ease .1s}
+.env{
+  position:relative;aspect-ratio:3/2;cursor:pointer;padding:.7em;box-sizing:border-box;
+  background:repeating-linear-gradient(135deg,#b23a30 0 .9em,#f3e6c4 .9em 1.35em,#2f5fa8 1.35em 2.25em,#f3e6c4 2.25em 2.7em);
+  box-shadow:0 .5em 1.4em rgba(30,15,5,.5);
+  transition:transform .9s ease .5s,opacity .5s ease .9s;
+}
+.env:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
+.open .peek{transform:translateY(-62%)}
+.open .env{transform:translateY(2.5em) rotate(-2deg);opacity:0}
+.face{position:relative;width:100%;height:100%;background-color:var(--paper2);background-image:radial-gradient(circle at 82% 18%,rgba(150,95,30,.28),transparent 42%),var(--n)}
+.from{position:absolute;left:1em;top:.9em;font-size:1.1em;line-height:1.1;color:var(--soft)}
+.stamp{
+  position:absolute;top:.9em;right:1em;width:3.2em;height:3.9em;box-sizing:border-box;
+  border:.28em dotted #f6ecd0;background:#2f5fa8;color:#f6ecd0;text-align:center;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:.8em;line-height:1.1;
+}
+.stamp span{font-size:1.5em;color:#e9a79e}
+.pm{position:absolute;top:.3em;right:3.4em;width:7em;transform:rotate(-10deg);pointer-events:none}
+.addr{position:absolute;left:30%;right:1em;bottom:1.1em;font-size:1.35em;line-height:1.15}
+.addr p{margin:0;border-bottom:1px solid var(--line);white-space:nowrap}
+.air{position:absolute;left:1em;bottom:1.2em;font-style:italic;font-size:.95em;border:1px solid #2f5fa8;color:#2f5fa8;padding:.1em .5em}
+.hint{text-align:center;margin:1.6rem 0 0;font-size:1.35rem;color:#f3e6c4;text-shadow:0 1px 3px rgba(30,15,5,.6)}
+
+/* carta */
+.paper{
+  position:relative;padding:2rem 1.5rem 2.2rem;text-align:center;border-radius:3px;
+  background-color:var(--paper);
+  background-image:
+    linear-gradient(to bottom,transparent 33%,rgba(90,50,10,.15) 33.2%,transparent 33.8%,transparent 66%,rgba(90,50,10,.15) 66.2%,transparent 66.8%),
+    radial-gradient(circle at 10% 6%,rgba(150,95,30,.3),transparent 30%),
+    radial-gradient(circle at 92% 94%,rgba(130,80,25,.32),transparent 36%),
+    var(--n);
+  box-shadow:0 .7rem 1.8rem rgba(30,15,5,.5),inset 0 0 3.2rem rgba(120,70,20,.38);
+}
+.date{margin:0 0 1.2rem;font-size:1rem;color:var(--soft);font-style:italic}
+.poem p{margin:0;font-size:1.55rem;line-height:1.45;opacity:0;animation:ink .9s ease forwards;animation-delay:calc(var(--i)*.6s + .3s)}
+.poem p.gap{margin-bottom:1rem}
+.sig{margin:1.3rem 0 .6rem;font-size:1.6rem;opacity:0;animation:ink .9s ease 5.2s forwards}
+.sealbox{opacity:0;animation:ink .9s ease 5.8s forwards}
+.sealbox span{display:block;margin-top:.3rem;font-size:1.2rem;color:var(--soft)}
+@keyframes ink{to{opacity:1}}
+.seal{
+  width:4rem;height:4rem;border-radius:50%;border:0;cursor:pointer;color:#e9a79e;font-size:1.8rem;line-height:1;
+  background:radial-gradient(circle at 35% 30%,#b3473d,var(--wax) 55%,#5e1a16);
+  box-shadow:0 .2rem .5rem rgba(40,10,5,.5),inset 0 0 0 .22rem rgba(0,0,0,.12);
+}
+.seal:focus-visible,.go:focus-visible,.again:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+
+/* contador */
+h1{margin:0 0 1rem;font-weight:400;font-style:italic;font-size:clamp(1.2rem,5vw,1.45rem);color:var(--soft)}
+.count{margin:0;font-size:clamp(3.4rem,18vw,5.2rem);line-height:1;font-variant-numeric:tabular-nums}
+.sub{margin:.4rem 0 1.5rem;color:var(--soft);font-style:italic}
+.route{position:relative;height:2.6rem;margin:0 .6rem .4rem}
+.track{position:absolute;left:0;right:0;top:50%;border-top:2px dotted var(--line)}
+.bar{position:absolute;left:0;top:50%;height:2px;width:0;background:var(--ink);transform:translateY(-50%)}
+.dot{position:absolute;top:50%;width:.7rem;height:.7rem;border-radius:50%;box-sizing:border-box;background:var(--ink);transform:translate(-50%,-50%)}
+.dot.b{left:100%;background:transparent;border:2px solid var(--ink)}
+.runner{position:absolute;top:50%;left:0;font-size:1.6rem;transform:translate(-50%,-62%)}
+.ends{display:flex;justify-content:space-between;margin:0 .6rem 1.6rem;font-size:1.25rem;color:var(--soft)}
+.go,.again{
+  font-family:Caveat,"Segoe Script","Bradley Hand",cursive;font-size:1.6rem;border:0;border-radius:999px;cursor:pointer;
+  background:var(--wax);color:#f3e3c0;padding:.45rem 1.9rem;box-shadow:0 .15rem .4rem rgba(40,10,5,.45);
+}
+.end{margin-top:1.3rem;padding:1.2rem 1rem;border:1px dashed var(--line);background:rgba(255,248,225,.25)}
+.end h2{margin:0 0 .5rem;font-size:1.35rem;font-weight:400}
+.end p{margin:.5rem 0;line-height:1.5;font-size:1.05rem}
+.extra{color:var(--soft)}
+.sign{font-size:1.6rem!important}
+.again{margin-top:.5rem;font-size:1.3rem;background:transparent;color:var(--ink);border:1.5px solid var(--ink);box-shadow:none}
+.link{display:block;margin:1.2rem auto 0;background:none;border:0;color:var(--soft);font:inherit;font-size:1rem;text-decoration:underline;cursor:pointer}
+#rain{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:5}
+.k{position:absolute;bottom:-3rem;opacity:0;animation:up linear forwards;will-change:transform,opacity}
+@keyframes up{
+  0%{opacity:0;transform:translate(0,0) rotate(0)}
+  12%{opacity:1}
+  100%{opacity:0;transform:translate(var(--dx),-112vh) rotate(var(--rot))}
+}
+@media (prefers-reduced-motion:reduce){
+  .poem p,.sig,.sealbox{animation-duration:.01s;animation-delay:0s}
+  .k{animation-duration:1.2s!important}
+  .peek,.env{transition-duration:.01s;transition-delay:0s}
+}
+</style>
+</head>
+<body>
+<div id="rain" aria-hidden="true"></div>
+
+<section class="stage" id="sEnv">
+  <div class="wrap" id="wrap">
+    <div class="peek"></div>
+    <div class="env" id="env" role="button" tabindex="0" aria-label="Abrir el sobre">
+      <div class="face">
+        <div class="from hand">De: tu negrita linda<br>La Romana, R.D.</div>
+        <svg class="pm" viewBox="0 0 120 70" aria-hidden="true">
+          <g fill="none" stroke="#2f4f86" stroke-width="2" opacity=".75" stroke-linecap="round">
+            <circle cx="38" cy="35" r="27"/><circle cx="38" cy="35" r="22" stroke-width="1"/>
+            <path d="M68 24q6-5 12 0t12 0t12 0t12 0M68 34q6-5 12 0t12 0t12 0t12 0M68 44q6-5 12 0t12 0t12 0t12 0"/>
+          </g>
+          <g fill="#2f4f86" opacity=".85" font-family="IM Fell English,Georgia,serif" font-size="8" text-anchor="middle">
+            <text x="38" y="30">LA ROMANA</text><text x="38" y="40">31 OCT 2026</text><text x="38" y="50">R.D.</text>
+          </g>
+        </svg>
+        <div class="stamp"><span>♥</span><b>70.000</b><i>besos</i></div>
+        <div class="air">por avión</div>
+        <div class="addr hand"><p>Para mi niñita hermosa</p><p>La Vega</p><p>República Dominicana</p></div>
+      </div>
+    </div>
+  </div>
+  <p class="hint hand">toca el sobre para abrirlo</p>
+</section>
+
+<section class="stage" id="sPaper" hidden>
+  <div class="paper">
+    <div id="pPoem">
+      <p class="date">La Romana, 31 de octubre de 2026</p>
+      <div class="poem hand">
+        <p style="--i:0">Todavía no sé a qué sabe tu boca,</p>
+        <p style="--i:1">pero mis besos ya conocen el camino:</p>
+        <p style="--i:2">salen de La Romana, cruzan la noche</p>
+        <p style="--i:3" class="gap">y te buscan en La Vega.</p>
+        <p style="--i:4">Dos mujeres, dos ciudades,</p>
+        <p style="--i:5">un primer beso que sigue esperando.</p>
+        <p style="--i:6">Mientras tanto, mi niñita hermosa,</p>
+        <p style="--i:7">guarda estos setenta mil: son tuyos.</p>
+      </div>
+      <p class="sig hand">con cariño, tu negrita linda</p>
+      <div class="sealbox"><button class="seal" id="toCount" type="button" aria-label="Continuar">♥</button><span class="hand">toca el sello</span></div>
+    </div>
+
+    <div id="pCount" hidden>
+      <h1>70.000 besos para mi niñita hermosa 🤍</h1>
+      <p class="count" id="count" aria-live="off">0</p>
+      <p class="sub">besos enviados</p>
+      <div class="route" aria-hidden="true">
+        <div class="track"></div><div class="bar" id="bar"></div>
+        <div class="dot"></div><div class="dot b"></div>
+        <div class="runner" id="runner">💋</div>
+      </div>
+      <div class="ends hand" aria-hidden="true"><span>desde La Romana</span><span>hasta La Vega</span></div>
+      <button class="go" id="go" type="button">Enviar los 70.000</button>
+
+      <section class="end" id="end" hidden>
+        <h2 id="endTitle">Entrega completa 🤍</h2>
+        <p id="endText">Los 70.000 llegaron. Cuando necesites uno, vuelve aquí: siempre habrá más esperándote.</p>
+        <p class="extra" id="extra">Toca la pantalla y te sigo mandando besitos, uno por uno.</p>
+        <p class="sign hand">con cariño, tu negrita linda</p>
+        <button class="again" id="again" type="button">Enviar otra vez</button>
+      </section>
+      <button class="link" id="reread" type="button">volver a leer la carta</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var TOTAL=70000,DUR=15000,KEY='besos70k';
+  var $=function(i){return document.getElementById(i)};
+  var sEnv=$('sEnv'),wrap=$('wrap'),env=$('env'),sPaper=$('sPaper'),pPoem=$('pPoem'),pCount=$('pCount'),
+      count=$('count'),bar=$('bar'),runner=$('runner'),go=$('go'),end=$('end'),
+      endTitle=$('endTitle'),endText=$('endText'),rain=$('rain'),extra=$('extra'),again=$('again');
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fmt=function(n){return Math.round(n).toLocaleString('de-DE')};
+  var stage='env',running=false,done=false,opened=false,extraCount=0,spawn=0;
+
+  function load(){try{return JSON.parse(localStorage.getItem(KEY))}catch(e){return null}}
+  function save(){try{localStorage.setItem(KEY,JSON.stringify({extra:extraCount}))}catch(e){}}
+  function pane(n){stage=n;pPoem.hidden=n!=='poem';pCount.hidden=n!=='count';document.body.scrollTop=0}
+
+  function kiss(x,emoji){
+    var s=document.createElement('span');
+    s.className='k';
+    s.textContent=emoji||(Math.random()<0.7?'💋':'🤍');
+    s.style.left=(x==null?Math.random()*96:x)+'%';
+    s.style.fontSize=(1.1+Math.random()*1.5)+'rem';
+    s.style.animationDuration=(2.8+Math.random()*2.4)+'s';
+    s.style.setProperty('--dx',(Math.random()*90-45)+'px');
+    s.style.setProperty('--rot',(Math.random()*60-30)+'deg');
+    s.addEventListener('animationend',function(){s.remove()});
+    rain.appendChild(s);
+  }
+  function burst(n){for(var i=0;i<n;i++)kiss()}
+
+  function finish(){
+    clearInterval(spawn);
+    count.textContent=fmt(TOTAL+extraCount);bar.style.width='100%';runner.style.left='100%';
+    end.hidden=false;running=false;done=true;save();
+    if(!reduce)burst(36);
+    setTimeout(function(){end.scrollIntoView({behavior:reduce?'auto':'smooth',block:'nearest'})},300);
+  }
+  function run(){
+    if(running)return;
+    running=true;done=false;end.hidden=true;go.hidden=true;
+    var dur=reduce?2500:DUR,start=performance.now();
+    function frame(now){
+      var t=Math.min(1,(now-start)/dur),e=-(Math.cos(Math.PI*t)-1)/2;
+      count.textContent=fmt(TOTAL*e);
+      bar.style.width=(e*100)+'%';runner.style.left=(e*100)+'%';
+      if(t<1)requestAnimationFrame(frame);else finish();
+    }
+    requestAnimationFrame(frame);
+    if(!reduce)spawn=setInterval(function(){burst(3)},110);
+  }
+
+  function openEnv(){
+    if(opened)return;opened=true;
+    sEnv.classList.add('open');
+    setTimeout(function(){sEnv.hidden=true;sPaper.hidden=false;pane('poem')},reduce?100:1400);
+  }
+  env.addEventListener('click',openEnv);
+  env.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openEnv()}});
+  $('toCount').addEventListener('click',function(){pane('count')});
+  $('reread').addEventListener('click',function(){pane('poem')});
+  go.addEventListener('click',run);
+  again.addEventListener('click',run);
+
+  document.addEventListener('pointerdown',function(e){
+    if(stage!=='count'||!done||running||e.target.closest('button'))return;
+    extraCount+=1;
+    kiss(Math.max(2,Math.min(96,e.clientX/window.innerWidth*100)),'💋');
+    count.textContent=fmt(TOTAL+extraCount);
+    extra.textContent='+ '+fmt(extraCount)+' besos más 🤍';
+    if(navigator.vibrate)navigator.vibrate(8);
+    save();
+  });
+
+  var saved=load();
+  if(saved){
+    extraCount=saved.extra||0;
+    opened=true;sEnv.hidden=true;sPaper.hidden=false;pane('count');
+    go.hidden=true;done=true;
+    count.textContent=fmt(TOTAL+extraCount);
+    bar.style.width='100%';runner.style.left='100%';
+    endTitle.textContent='Aquí siguen tus besos 🤍';
+    endText.textContent='Vuelve las veces que quieras. Cuando necesites uno, aquí van a estar esperándote.';
+    if(extraCount)extra.textContent='+ '+fmt(extraCount)+' besos más 🤍';
+    end.hidden=false;
+  }
+})();
+</script>
+</body>
+</html>
